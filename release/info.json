@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 3,
+  "title": "Buck Off",
+  "description": "Stay on Bucky the Bull as long as you can. A button pops up next to the bull: press it fast and he bucks, too slow or the wrong one and you slip. Three slips and you're bucked off. Scored to the millisecond, with 14 ranks from Ground Beef to Buck Almighty.",
+  "author": "jaychugstein",
+  "version": "1.0.0",
+  "date": "2026-10-30",
+  "genre": "Action",
+  "license": "MIT",
+  "sourceUrl": "https://github.com/jaychugstein/Buck-Off",
+  "binaries": [
+    {
+      "title": "Buck Off",
+      "filename": "BuckOff.hex",
+      "device": "ArduboyFX",
+      "flashdata": "BuckOff-fxdata.bin",
+      "titleimage": "title.png"
+    }
+  ]
+}
