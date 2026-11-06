@@ -100,7 +100,7 @@ ys, xs = np.nonzero(lying); lying = lying[ys.min():ys.max() + 1, xs.min():xs.max
 lie = np.stack([lying, binary_dilation(lying, iterations=1) & ~lying])[None]
 # background: the rodeo arena (arena.py)
 import arena; FENCE = arena.A
-# prompts, 17x17: 4 arrows and the two buttons (the one to press filled in, POOM layout: inner low-left, outer high-right)
+# prompts, 17x17: 4 arrows and the two buttons (the one to press filled in)
 AR = ["......X......", ".....XXX.....", "....XXXXX....", "...XXXXXXX...", "..XXXXXXXXX..", ".XXXXXXXXXXX.", "XXXXXXXXXXXXX",
       "....XXXXX....", "....XXXXX....", "....XXXXX....", "....XXXXX....", "....XXXXX....", "....XXXXX...."]
 # arrows: a 9x9 arrow inside a white 17x17 box with a bold 2 px black outline (rounded corners)
@@ -131,7 +131,7 @@ def btn(letter):                                   # a white round button with a
             if col >> j & 1: ink[5 + j, 6 + i] = True; ink[5 + j, 7 + i] = True     # bold: each column doubled
     return np.stack([ink, disc & ~ink])
 prompts = [arrow(a9), arrow(a9[::-1]), arrow(a9.T), arrow(a9.T[:, ::-1])]   # up, down, left, right
-prompts += [btn('B'), btn('A')]                                            # inner button = B, outer button = A
+prompts += [btn('A'), btn('B')]                                            # A_BUTTON, B_BUTTON (order matches BTN[] in the game)
 prompts = [bordered(p[0], p[1]) for p in prompts]
 np.savez('frames.npz', bull=np.stack(frames), rider=np.stack(riders), waver=np.stack(wavers), tumble=np.stack(tumble), hat=hat, lie=lie,
          fence=FENCE, prompts=np.stack(prompts))

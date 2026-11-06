@@ -1,0 +1,5 @@
+build/
+art/__pycache__/
+art/*.npy
+art/*.npz
+art/seats.json

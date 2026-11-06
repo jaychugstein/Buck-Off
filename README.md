@@ -23,7 +23,8 @@ By **jaychugstein** · MIT License · Arduboy FX / FX-C (uses the FX flash chip)
 | Right | Ride again (score screen) |
 | Left | Back to the title (score screen) |
 
-A is the outer button and B is the inner one, as on the POOM.
+Buttons follow the Arduboy layout: A is the inner (lower left) button and B is the outer (upper right) one,
+and the controls screen shows them that way.
 
 ## How a ride works
 
